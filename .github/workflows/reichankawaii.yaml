@@ -8,5 +8,5 @@ jobs:
     steps:
       - name: Notice slack
         run: |
-          url=$(curl -L ${{ secrets.REICHAN_KAWAII_URL }})
-          echo "${url}"
+          image_url=$(curl -L ${{ secrets.REICHAN_KAWAII_URL }})
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"", "attachments" : [{"image_url": "${image_url}"}]}' ${{ secrets.SLACK_WEBHOOK_URL }}
