@@ -12,5 +12,4 @@ jobs:
       - name: Reichan kawaii
         run: |
           image_url=$(curl -L ${{ secrets.REICHAN_KAWAII_URL }})
-          curl -X POST -H 'Content-type: application/json' --data "{\"text\": \"\"}, \"attachments\": [{\"fields\": [{\"title\": \"\",\"value\": \"\"}],\"image_url\": \"${image_url}\"}]" ${{ secrets.SLACK_WEBHOOK_URL }}
-    
+          curl -X POST -H 'Content-type: application/json' --data "{\"text\": \"<${image_url}|.>\"}" ${{ secrets.SLACK_WEBHOOK_URL }}
