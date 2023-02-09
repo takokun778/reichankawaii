@@ -1,0 +1,16 @@
+name: morning call
+run-name: ${{ github.ref_name }} by @${{ github.actor }} ${{ github.workflow }}
+on:
+  schedule:
+    - cron: '0 23 * * *'
+  push:
+    branches:
+      - main
+jobs:
+  reichan-kawaii:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Reichan kawaii
+        run: |
+          image_url=$(curl -L ${{ secrets.REICHAN_KAWAII_URL }})
+          curl -X POST -H 'Content-type: application/json' --data "{\"text\": \"<!たこくん> <${image_url}|.>\"}" ${{ secrets.SLACK_WEBHOOK_URL }}
