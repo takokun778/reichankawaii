@@ -1,0 +1,12 @@
+name: reichan kawaii
+run-name: ${{ github.ref_name }} by @${{ github.actor }} ${{ github.workflow }}
+on:
+  workflow_dispatch:
+jobs:
+  reichan-kawaii:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Notice slack
+        run: |
+          url=$(curl -L ${REICHAN_PHOTOS_APP_ENDPOINT})
+          echo "${url}"
