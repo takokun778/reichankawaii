@@ -8,7 +8,6 @@ jobs:
     steps:
       - name: Reichan kawaii
         run: |
-          image_url=$(curl -L ${{ secrets.REICHAN_KAWAII_URL }})
-          body='{"text":"${image_url}"}'
+          body='{"text":"$(curl -L ${{ secrets.REICHAN_KAWAII_URL }})"}'
           echo ${body}
           curl -X POST -H 'Content-type: application/json' --data ${body} ${{ secrets.SLACK_WEBHOOK_URL }}
