@@ -8,5 +8,5 @@ jobs:
     steps:
       - name: Notice slack
         run: |
-          url=$(curl -L ${REICHAN_PHOTOS_APP_ENDPOINT})
+          url=$(curl -L ${REICHAN_KAWAII_URL})
           echo "${url}"
