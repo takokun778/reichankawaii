@@ -6,7 +6,7 @@ jobs:
   reichan-kawaii:
     runs-on: ubuntu-22.04
     steps:
-      - name: Notice slack
+      - name: Reichan kawaii
         run: |
           image_url=$(curl -L ${{ secrets.REICHAN_KAWAII_URL }})
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"", "attachments" : [{"image_url": "${image_url}"}]}' ${{ secrets.SLACK_WEBHOOK_URL }}
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"${image_url}"}' ${{ secrets.SLACK_WEBHOOK_URL }}
