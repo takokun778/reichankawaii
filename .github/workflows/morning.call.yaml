@@ -2,7 +2,7 @@ name: morning call
 run-name: ${{ github.ref_name }} by @${{ github.actor }} ${{ github.workflow }}
 on:
   schedule:
-    - cron: '0 22 * * *'
+    - cron: '0 23 * * *'
 jobs:
   reichan-kawaii:
     runs-on: ubuntu-22.04
