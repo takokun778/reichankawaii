@@ -5,7 +5,7 @@ on:
     - cron: '0 23 * * *'
 jobs:
   reichan-kawaii:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Reichan kawaii
         run: |
